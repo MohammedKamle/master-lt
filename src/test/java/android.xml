@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="100" name="Mobile" parallel="tests">
+
+    <test name="AndroidAppTest 1">
+        <classes>
+            <class name="AppAutomation.SampleAndroidAppTest" />
+        </classes>
+    </test>
+    <test name="AndroidAppTest 2">
+        <classes>
+            <class name="AppAutomation.SampleAndroidAppTest" />
+        </classes>
+    </test>
+    <test name="AndroidAppTest 3">
+        <classes>
+            <class name="AppAutomation.SampleAndroidAppTest" />
+        </classes>
+    </test>
+    <test name="AndroidAppTest 4">
+        <classes>
+            <class name="AppAutomation.SampleAndroidAppTest" />
+        </classes>
+    </test>
+
+
+</suite>
