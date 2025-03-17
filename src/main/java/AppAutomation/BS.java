@@ -1,17 +1,20 @@
 package AppAutomation;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Set;
 
 public class BS {
-    public IOSDriver<IOSElement> driver;
+    public AndroidDriver driver;
 
 
 
@@ -39,19 +42,24 @@ public class BS {
         //ios
 //        capabilities.setCapability("app", "bs://11c89322ec2e72d1718a40af5ed9836fa953acda");
         //android
-        capabilities.setCapability("app", "bs://f4e47edcf5eab80a15182576f2ba990db74428779");
-        capabilities.setCapability("build", "build-lingo");
+        capabilities.setCapability("app", "bs://38d9f3f4e4304a50db30d34934c27a56b06f2e41");
+        capabilities.setCapability("build", "build-cybersmart");
         capabilities.setCapability("name", "debug");
 
         capabilities.setCapability("platformName", "android");
-        capabilities.setCapability("platformVersion", "9.0");
-        capabilities.setCapability("deviceName", "Google Pixel 3");
+        capabilities.setCapability("platformVersion", "10.0");
+        capabilities.setCapability("deviceName", "Samsung Galaxy S20");
 
 
-        driver = new IOSDriver<IOSElement>(new URL("http://"+"falconmagicleap_vci1oa"+":"+"D2o95qF5cHvPyWj4uJXa"+"@"+"hub-cloud.browserstack.com"+"/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL("http://"+"mobileautoservic_w86Uka"+":"+"SeW8HQo2LzzoUw9qsDK8"+"@"+"hub-cloud.browserstack.com"+"/wd/hub"), capabilities);
 
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
+
+        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.Button")).click();
+
+
+
 
         driver.quit();
     }

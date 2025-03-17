@@ -2,6 +2,7 @@ package AppAutomation;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 import java.util.HashMap;
@@ -18,7 +19,7 @@ public class Dedulas {
 
     public String gridURL = "@hub.lambdatest.com/wd/hub";
 
-    AppiumDriver driver;
+    AndroidDriver driver;
 
     @Test
     public void AndroidApp1() {
@@ -34,7 +35,11 @@ public class Dedulas {
 
 
             String hub = "https://" + userName + ":" + accessKey + gridURL;
-            driver = new AppiumDriver(new URL(hub), capabilities);
+            driver = new AndroidDriver(new URL(hub), capabilities);
+
+            driver.openNotifications();
+
+
 
 
 

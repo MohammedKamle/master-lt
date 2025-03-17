@@ -28,13 +28,13 @@ public class Harri {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             HashMap<String, Object> ltOptions = new HashMap<String, Object>();
             ltOptions.put("w3c", true);
-            ltOptions.put("platformName", "android");
-            ltOptions.put("deviceName", "Galaxy.*");
+            ltOptions.put("platformName", "ios");
+            ltOptions.put("deviceName", "iPhone.*");
             //ltOptions.put("platformVersion", version);
-            ltOptions.put("app", "harri");
-          //  ltOptions.put("fixedIP", "R3CW30P994W");
+            ltOptions.put("app", "proverbialIos");
+            ltOptions.put("fixedIP", "00008110-000C68482EC1401E");
             //ltOptions.put("appiumVersion", "2.0");
-            ltOptions.put("build", "harri-debug");
+            ltOptions.put("build", "ahnl-debug");
             // ltOptions.put("name", platform+" "+device+" "+version);
             ltOptions.put("isRealMobile", true);
             capabilities.setCapability("lt:options", ltOptions);

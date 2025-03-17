@@ -4,8 +4,10 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -21,8 +23,8 @@ public class MobileWeb {
 
     @BeforeMethod
     public void setup(Method m, ITestContext ctx) throws MalformedURLException {
-        String username = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
-        String authkey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
+        String username ="mohammadk";
+        String authkey = "gkrzT0iFKjDjehXpMTznxM1lHIZXSYjV3H8Ntk0s2rCUJJO3WU";
         ;
         String hub = "@mobile-hub.lambdatest.com/wd/hub";
 
@@ -41,17 +43,20 @@ public class MobileWeb {
         ltOptions.put("w3c", true);
         ltOptions.put("platformName", "Android");
         ltOptions.put("deviceName", "Pixel 7");
-        ltOptions.put("automationName", "UiAutomator2");
+
         ltOptions.put("platformVersion", "13");
         ltOptions.put("browserName", "Chrome");
         ltOptions.put("build", "mobile-web");
         ltOptions.put("user","mohammadk");
-        ltOptions.put("accessKey", "rakcBoBYHiy8BW7osVi4N1LGYjgJhRfAwvL1pPUvwCA1wfNChd");
+        ltOptions.put("accessKey", "gkrzT0iFKjDjehXpMTznxM1lHIZXSYjV3H8Ntk0s2rCUJJO3WU");
         // ltOptions.put("name", platform+" "+device+" "+version);
         ltOptions.put("isRealMobile", true);
+
         capabilities.setCapability("LT:Options", ltOptions);
 
         driver = new RemoteWebDriver(new URL("https://mobile-hub.lambdatest.com/wd/hub"), capabilities);
+
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
@@ -62,6 +67,8 @@ public class MobileWeb {
         driver.get("https://lambdatest.github.io/sample-todo-app/");
 
         System.out.println("Checking Box");
+
+        //((JavascriptExecutor)driver).executeScript("smartui.takeScreenshot=sample-1");
         driver.findElement(By.name("li1")).click();
 
         System.out.println("Checking Another Box");
@@ -76,6 +83,7 @@ public class MobileWeb {
         driver.findElement(By.id("sampletodotext")).sendKeys(" List Item 6");
         driver.findElement(By.id("addbutton")).click();
 
+
         driver.findElement(By.id("sampletodotext")).sendKeys(" List Item 7");
         driver.findElement(By.id("addbutton")).click();
 
@@ -87,6 +95,8 @@ public class MobileWeb {
 
         System.out.println("Checking Another Box");
         driver.findElement(By.name("li3")).click();
+
+        ((JavascriptExecutor)driver).executeScript("smartui.takeScreenshot=sample-1");
 
         System.out.println("Checking Another Box");
         driver.findElement(By.name("li7")).click();

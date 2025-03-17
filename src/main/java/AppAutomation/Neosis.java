@@ -55,6 +55,8 @@ public class Neosis {
             //Changes color to pink
             color.click();
             Thread.sleep(1000);
+
+
             //   driver.executeScript("smartui.takeScreenshot=dashboard-1");
             //driver.executeScript("smartui.takeScreenshot=dashboard-1");
             //Back to orginal color

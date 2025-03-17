@@ -31,7 +31,7 @@ public class TemplateClass {
             ltOptions.put("platformName", "android");
 //            ltOptions.put("deviceName", device);
             //ltOptions.put("platformVersion", version);
-            ltOptions.put("app", "Proverbial");
+            ltOptions.put("app", "proverbial-android");
             ltOptions.put("appiumVersion", "2.0");
             ltOptions.put("build", "Java TestNG Android");
             // ltOptions.put("name", platform+" "+device+" "+version);

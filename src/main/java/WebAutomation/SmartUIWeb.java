@@ -21,8 +21,8 @@ public class SmartUIWeb {
 
     @BeforeMethod
     public void setup(Method m, ITestContext ctx) throws MalformedURLException {
-        String username = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
-        String authkey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
+        String username = "mohammadk";
+        String authkey = "gkrzT0iFKjDjehXpMTznxM1lHIZXSYjV3H8Ntk0s2rCUJJO3WU";
 
 
         String hub = "@hub.lambdatest.com/wd/hub";
@@ -34,9 +34,8 @@ public class SmartUIWeb {
         caps.setCapability("build", "TestNG With Java");
         caps.setCapability("name", "sample-test");
         caps.setCapability("plugin", "git-testng");
-        caps.setCapability("smartUI.project", "mdk-web-3");
-        caps.setCapability("smartUI.build", "sample-build");
-        caps.setCapability("smartUI.baseline", true);
+        caps.setCapability("smartUI.project", "Coupa");
+        caps.setCapability("smartUI.baseline", false);
 
 
         String[] Tags = new String[] { "Feature", "Magicleap", "Severe" };
@@ -81,6 +80,8 @@ public class SmartUIWeb {
         System.out.println("Checking Another Box");
         driver.findElement(By.name("li1")).click();
 
+        //((JavascriptExecutor)driver).executeScript("smartui.takeScreenshot=sample-1");
+
         System.out.println("Checking Another Box");
         driver.findElement(By.name("li3")).click();
 
@@ -111,6 +112,7 @@ public class SmartUIWeb {
 
     @AfterMethod
     public void tearDown() {
+        driver.executeScript("lambda-status=" + Status);
         driver.executeScript("lambda-status=" + Status);
         driver.quit();
     }

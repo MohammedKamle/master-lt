@@ -51,6 +51,8 @@ public class Ioco {
 
         driver.get("https://oneplus-uat.e-toyota.co.za/");
 
+        System.out.println("Session ID :: "+driver.getSessionId());
+
         driver.findElement(By.xpath("//input[@id='Username']")).sendKeys("D2221256");
 
         driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("3NI98442021");

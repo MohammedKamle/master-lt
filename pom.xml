@@ -56,6 +56,26 @@
       <version>5.4.1</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.13</version> <!-- Use the latest version available -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
+      <version>4.5.13</version> <!-- Use the latest version available -->
+    </dependency>
+
+    <dependency>
+      <groupId>io.github.lambdatest</groupId>
+      <artifactId>lambdatest-java-sdk</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+
+
   </dependencies>
 
 

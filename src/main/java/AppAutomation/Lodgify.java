@@ -48,6 +48,7 @@ public class Lodgify {
 
 
 
+
         } finally {
             driver.quit();
         }

@@ -50,6 +50,7 @@ public class Biometric {
             allowButton.click();
             MobileElement biometric = (MobileElement) driver.findElementById("com.poc.sample:id/biometric");
             biometric.click();
+            
 
         } finally {
             driver.quit();
